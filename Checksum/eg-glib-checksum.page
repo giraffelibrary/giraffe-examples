@@ -1,0 +1,84 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="eg-glib-checksum">
+<info>
+  <title type="link">Checksum</title>
+  <link type="guide" xref="eg-index#glib"/>
+  <desc>Compute the checksum of a file</desc>
+</info>
+<title>File Checksum Example</title>
+<p>
+This example demonstrates:
+</p>
+<list style="compact">
+<item>
+  <p>
+    reading a file using the GIO <link href="https://developer.gnome.org/gio/stable/GFile.html">file</link>
+    and <link href="https://developer.gnome.org/gio/stable/GInputStream.html">input stream</link> APIs;
+  </p>
+</item>
+<item>
+  <p>
+    computing a checksum using the GLib <link href="https://developer.gnome.org/glib/stable/glib-Data-Checksums.html">data checksum</link> API.
+  </p>
+</item>
+</list>
+<p>
+<code>GC.full ()</code> is used while reading to ensure that the read buffers,
+allocated on the C heap, are not kept longer than necessary.  Although a compiler would
+eventually trigger GC, this avoids unnecessarily allocating memory which may trigger
+performance issues relating to virtual memory, particularly with large files.
+</p>
+
+<section>
+<title>Download</title>
+<p>
+<link href="examples/Checksum.tar.gz">Checksum.tar.gz</link>
+</p>
+<p>
+See <link xref="eg-using-make"/> for build instructions.
+</p>
+</section>
+
+<section>
+<title>Library dependencies</title>
+<list style="compact">
+<item><p>GLib 2.0 (GLib, GObject, Gio)</p></item>
+</list>
+</section>
+
+<section>
+<title>File listings</title>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>checksum.sml</file></title>
+  <code>
+<include parse="text" href="checksum.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>mlton-main.sml</file></title>
+  <code>
+<include parse="text" href="mlton-main.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>mlton.mlb</file></title>
+  <code>
+<include parse="text" href="mlton.mlb" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>polyml-libs.sml</file></title>
+  <code>
+<include parse="text" href="polyml-libs.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>polyml-app.sml</file></title>
+  <code>
+<include parse="text" href="polyml-app.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>app.mk</file></title>
+  <code>
+<include parse="text" href="app.mk" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+</section>
+
+</page>

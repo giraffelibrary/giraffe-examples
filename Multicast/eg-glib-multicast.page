@@ -1,0 +1,90 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="eg-glib-multicast">
+<info>
+  <title type="link">Multicast</title>
+  <link type="guide" xref="eg-index#glib"/>
+  <desc>Send and receive via a UDP multicast group</desc>
+</info>
+<title>UDP Multicast Example</title>
+<p>
+This example demonstrates use of
+the GIO <link href="https://developer.gnome.org/gio/stable/GSocket.html">low-level socket</link> API
+to send and receive a string using UDP/IP via a multicast group.
+</p>
+<p>
+The application behaves as the sender if it is invoked with an argument
+and otherwise behaves as a receiver.
+A message is sent once per second
+containing the signed decimal representation of an integer
+that increments for each message sent.
+The initial value of the integer is the argument given to the sender,
+represented as a signed decimal literal.
+The sender terminates after it has sent a message representing zero.
+The receiver terminates after it has received a message representing zero.
+Therefore, the sender and receivers terminate only if the sender is
+invoked with a non-positive argument.
+</p>
+<p>
+Note that the SML Basis Library (as it stands on 2020-11-10) does not
+provide support for joining a multicast group so only the sender can
+be implemented using the SML Basis Library.
+</p>
+<p>
+This can be tested without an internet connection, for example
+running the sender and multiple receivers on the same machine or on
+multiple machines connected to a portable hotspot on a mobile phone!
+</p>
+
+<section>
+<title>Download</title>
+<p>
+<link href="examples/Multicast.tar.gz">Multicast.tar.gz</link>
+</p>
+<p>
+See <link xref="eg-using-make"/> for build instructions.
+</p>
+</section>
+
+<section>
+<title>Library dependencies</title>
+<list style="compact">
+<item><p>GLib 2.0 (GLib, GObject, Gio)</p></item>
+</list>
+</section>
+
+<section>
+<title>File listings</title>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>multicast.sml</file></title>
+  <code>
+<include parse="text" href="multicast.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>mlton-main.sml</file></title>
+  <code>
+<include parse="text" href="mlton-main.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>mlton.mlb</file></title>
+  <code>
+<include parse="text" href="mlton.mlb" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>polyml-libs.sml</file></title>
+  <code>
+<include parse="text" href="polyml-libs.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>polyml-app.sml</file></title>
+  <code>
+<include parse="text" href="polyml-app.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>app.mk</file></title>
+  <code>
+<include parse="text" href="app.mk" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+</section>
+
+</page>

@@ -1,0 +1,90 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="eg-vte-app2">
+<info>
+  <title type="link">VteApp2</title>
+  <link type="guide" xref="eg-index#vte"/>
+  <desc>VTE 2.91 widget</desc>
+</info>
+<title>VTE 2.91 Widget Example</title>
+<p>
+This example demonstrates use of
+the <link href="https://developer.gnome.org/vte/stable/">VTE 2.91 widget</link> API
+in an application.
+</p>
+<p>
+Also, this example demonstrates use of other GTK widgets:
+</p>
+<list style="compact">
+<item><p><link href="https://developer.gnome.org/gtk3/stable/GtkMessageDialog.html">message dialog</link></p></item>
+<item><p><link href="https://developer.gnome.org/gtk3/stable/GtkFontChooserDialog.html">font chooser dialog</link></p></item>
+<item>
+  <p>
+    <link href="https://developer.gnome.org/gtk3/stable/GtkButton.html">button</link>,
+    with a <link href="https://developer.gnome.org/gio/stable/GSimpleAction.html">simple action</link>
+    that is added to an <link href="https://developer.gnome.org/gio/stable/GActionMap.html">action map</link>
+  </p>
+</item>
+<item><p><link href="https://developer.gnome.org/gtk3/stable/GtkSpinButton.html">spin button</link></p></item>
+</list>
+
+<section>
+<title>Download</title>
+<p>
+<link href="examples/VteApp2.tar.gz">VteApp2.tar.gz</link>
+</p>
+<p>
+See <link xref="eg-using-make"/> for build instructions.
+</p>
+</section>
+
+<section>
+<title>Library dependencies</title>
+<list style="compact">
+<item><p>GLib 2.0 (GLib, GObject, Gio)</p></item>
+<item><p>Pango 1.0 (Pango)</p></item>
+<item><p>GTK 3.0 (Gdk, Gtk)</p></item>
+<item><p>VTE 2.90 (Vte)</p></item>
+</list>
+</section>
+
+<section>
+<title>File listings</title>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>vteapp.sml</file></title>
+  <code>
+<include parse="text" href="vteapp.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>VteMainWindow.sml</file></title>
+  <code>
+<include parse="text" href="VteMainWindow.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>mlton-main.sml</file></title>
+  <code>
+<include parse="text" href="mlton-main.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>mlton.mlb</file></title>
+  <code>
+<include parse="text" href="mlton.mlb" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>polyml-libs.sml</file></title>
+  <code>
+<include parse="text" href="polyml-libs.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>polyml-app.sml</file></title>
+  <code>
+<include parse="text" href="polyml-app.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>app.mk</file></title>
+  <code>
+<include parse="text" href="app.mk" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+</section>
+
+</page>

@@ -1,0 +1,66 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="eg-gtk3-helloworld">
+<info>
+  <title type="link">Hello World</title>
+  <link type="guide" xref="eg-index#gtk3"/>
+  <desc>Hello World GTK 3 example</desc>
+</info>
+<title>Hello World GTK 3 Example</title>
+<p>
+The <link href="https://developer.gnome.org/gtk3/stable/gtk-getting-started.html#id-1.2.3.5">Hello World example from the GTK 3 tutorial</link>.
+</p>
+
+<section>
+<title>Download</title>
+<p>
+<link href="examples/HelloWorld3.tar.gz">HelloWorld3.tar.gz</link>
+</p>
+<p>
+See <link xref="eg-using-make"/> for build instructions.
+</p>
+</section>
+
+<section>
+<title>Library dependencies</title>
+<list style="compact">
+<item><p>GLib 2.0 (GObject, Gio)</p></item>
+<item><p>GTK 3.0 (Gtk)</p></item>
+</list>
+</section>
+
+<section>
+<title>File listings</title>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>helloworld3.sml</file></title>
+  <code>
+<include parse="text" href="helloworld3.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>mlton-main.sml</file></title>
+  <code>
+<include parse="text" href="mlton-main.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>mlton.mlb</file></title>
+  <code>
+<include parse="text" href="mlton.mlb" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>polyml-libs.sml</file></title>
+  <code>
+<include parse="text" href="polyml-libs.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>polyml-app.sml</file></title>
+  <code>
+<include parse="text" href="polyml-app.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>app.mk</file></title>
+  <code>
+<include parse="text" href="app.mk" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+</section>
+
+</page>

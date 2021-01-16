@@ -26,8 +26,8 @@ fun main () =
     val app = Gtk.Application.new (SOME "org.gtk.example", Gio.ApplicationFlags.FLAGS_NONE)
     val _ = Signal.connect app Gio.Application.activateSig (activate app)
 
-    val args = Utf8CPtrArrayN.fromList (CommandLine.name () :: CommandLine.arguments ())
-    val status = Gio.Application.run app args
+    val argv = Utf8CPtrArrayN.fromList (CommandLine.name () :: CommandLine.arguments ())
+    val status = Gio.Application.run app argv
   in
     Giraffe.exit status
   end

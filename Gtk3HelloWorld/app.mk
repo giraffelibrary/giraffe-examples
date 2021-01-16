@@ -1,7 +1,7 @@
 ################################################################################
 # Application-specific values
 
-NAME := helloworld3
+NAME := example-1
 
 
 # MLton target

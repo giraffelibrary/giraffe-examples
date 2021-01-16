@@ -23,7 +23,7 @@ fun activate app () =
 
 fun main () =
   let
-    val app = Gtk.Application.new (SOME "org.giraffe.helloworld3", Gio.ApplicationFlags.FLAGS_NONE)
+    val app = Gtk.Application.new (SOME "org.gtk.example", Gio.ApplicationFlags.FLAGS_NONE)
     val _ = Signal.connect app Gio.Application.activateSig (activate app)
 
     val args = Utf8CPtrArrayN.fromList (CommandLine.name () :: CommandLine.arguments ())

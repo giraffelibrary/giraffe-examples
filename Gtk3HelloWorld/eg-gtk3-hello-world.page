@@ -1,20 +1,22 @@
 <page xmlns="http://projectmallard.org/1.0/"
       type="topic"
-      id="eg-gtk3-helloworld">
+      id="eg-gtk3-hello-world">
 <info>
   <title type="link">Hello World</title>
-  <link type="guide" xref="eg-index#gtk3"/>
-  <desc>Hello World GTK 3 example</desc>
+  <title type="sort">2</title>
+  <link type="guide" xref="eg-gtk3-reference-manual#basics"/>
+  <desc>SML version of <file>example-1.c</file></desc>
 </info>
-<title>Hello World GTK 3 Example</title>
+<title>GTK 3 Hello World Example</title>
 <p>
-The <link href="https://developer.gnome.org/gtk3/stable/gtk-getting-started.html#id-1.2.3.5">Hello World example from the GTK 3 tutorial</link>.
+The SML version of the C code for
+<link href="https://developer.gnome.org/gtk3/stable/gtk-getting-started.html#id-1.2.3.5">Example 1 from the GTK 3 reference manual</link>.
 </p>
 
 <section>
 <title>Download</title>
 <p>
-<link href="examples/HelloWorld3.tar.gz">HelloWorld3.tar.gz</link>
+<link href="examples/Gtk3HelloWorld.tar.gz">Gtk3HelloWorld.tar.gz</link>
 </p>
 <p>
 See <link xref="eg-using-make"/> for build instructions.
@@ -32,9 +34,9 @@ See <link xref="eg-using-make"/> for build instructions.
 <section>
 <title>File listings</title>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
-  <title><file>helloworld3.sml</file></title>
+  <title><file>example-1.sml</file></title>
   <code>
-<include parse="text" href="helloworld3.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+<include parse="text" href="example-1.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>mlton-main.sml</file></title>

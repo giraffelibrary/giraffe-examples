@@ -5,4 +5,4 @@
  * <file> is taken as a build dependency.
  *)
 
-use "helloworld3.sml";
+use "example-1.sml";

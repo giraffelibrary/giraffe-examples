@@ -1,0 +1,68 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="eg-gtk3-packing-buttons">
+<info>
+  <title type="link">Packing Buttons</title>
+  <title type="sort">1</title>
+  <link type="guide" xref="eg-gtk3-reference-manual#packing"/>
+  <desc>SML version of <file>example-2.c</file></desc>
+</info>
+<title>GTK 3 Packing Buttons Example</title>
+<p>
+The SML version of the C code for
+<link href="https://developer.gnome.org/gtk3/stable/ch01s02.html">Example 2 from the GTK 3 reference manual</link>.
+</p>
+
+<section>
+<title>Download</title>
+<p>
+<link href="examples/Gtk3PackingButtons.tar.gz">Gtk3PackingButtons.tar.gz</link>
+</p>
+<p>
+See <link xref="eg-using-make"/> for build instructions.
+</p>
+</section>
+
+<section>
+<title>Library dependencies</title>
+<list style="compact">
+<item><p>GLib 2.0 (GObject, Gio)</p></item>
+<item><p>GTK 3.0 (Gtk)</p></item>
+</list>
+</section>
+
+<section>
+<title>File listings</title>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>example-2.sml</file></title>
+  <code>
+<include parse="text" href="example-2.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>mlton-main.sml</file></title>
+  <code>
+<include parse="text" href="mlton-main.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>mlton.mlb</file></title>
+  <code>
+<include parse="text" href="mlton.mlb" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>polyml-libs.sml</file></title>
+  <code>
+<include parse="text" href="polyml-libs.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>polyml-app.sml</file></title>
+  <code>
+<include parse="text" href="polyml-app.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+<listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
+  <title><file>app.mk</file></title>
+  <code>
+<include parse="text" href="app.mk" xmlns="http://www.w3.org/2001/XInclude"/></code>
+</listing>
+</section>
+
+</page>

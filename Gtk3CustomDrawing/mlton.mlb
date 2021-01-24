@@ -1,0 +1,13 @@
+local
+  $(SML_LIB)/basis/basis.mlb
+  $(SML_LIB)/basis/mlton.mlb
+  $(GIRAFFE_SML_LIB)/general/mlton.mlb
+  $(GIRAFFE_SML_LIB)/gobject-2.0/mlton.mlb
+  $(GIRAFFE_SML_LIB)/gio-2.0/mlton.mlb
+  $(GIRAFFE_SML_LIB)/cairo-1.0/mlton.mlb
+  $(GIRAFFE_SML_LIB)/gdk-3.0/mlton.mlb
+  $(GIRAFFE_SML_LIB)/gtk-3.0/mlton.mlb
+in
+  example-4.sml
+  mlton-main.sml
+end

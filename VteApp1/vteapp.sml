@@ -10,10 +10,12 @@ fun main () =
   let
     val appId = "org.giraffelibrary.demo.vteapp1"
     val app = Gtk.Application.new (SOME appId, Gio.ApplicationFlags.flags [])
-    val _ = Signal.connect app Gio.Application.activateSig (activate app)
+    val id = Signal.connect app Gio.Application.activateSig (activate app)
 
     val argv = Utf8CPtrArrayN.fromList (CommandLine.name () :: CommandLine.arguments ())
     val status = Gio.Application.run app argv
+
+    val () = Signal.disconnect app id
   in
     Giraffe.exit status
   end

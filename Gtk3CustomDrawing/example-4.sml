@@ -140,7 +140,7 @@ fun activate app () =
     val window = ApplicationWindow.new app
     val () = Window.setTitle window "Window"
 
-    val _ = Signal.connect window Widget.destroySig closeWindow
+    val _ = Signal.connect window (Widget.destroySig, closeWindow)
 
     val () = Container.setBorderWidth window 8
 
@@ -155,15 +155,15 @@ fun activate app () =
     val () = Container.add frame drawingArea
 
     (* Signals used to handle the backing surface *)
-    val _ = Signal.connect drawingArea Widget.drawSig drawCb
-    val _ = Signal.connect drawingArea Widget.configureEventSig
-                                                  (configureEventCb drawingArea)
+    val _ = Signal.connect drawingArea (Widget.drawSig, drawCb)
+    val _ = Signal.connect drawingArea (Widget.configureEventSig,
+                                                   configureEventCb drawingArea)
 
     (* Event signals *)
-    val _ = Signal.connect drawingArea Widget.motionNotifyEventSig
-                                               (motionNotifyEventCb drawingArea)
-    val _ = Signal.connect drawingArea Widget.buttonPressEventSig
-                                                (buttonPressEventCb drawingArea)
+    val _ = Signal.connect drawingArea (Widget.motionNotifyEventSig,
+                                                motionNotifyEventCb drawingArea)
+    val _ = Signal.connect drawingArea (Widget.buttonPressEventSig,
+                                                 buttonPressEventCb drawingArea)
 
     (* Ask to receive events the drawing area doesn't normally
      * subscribe to. In particular, we need to ask for the
@@ -185,7 +185,7 @@ fun activate app () =
 fun main () =
   let
     val app = Gtk.Application.new (SOME "org.gtk.example", Gio.ApplicationFlags.FLAGS_NONE)
-    val id = Signal.connect app Gio.Application.activateSig (activate app)
+    val id = Signal.connect app (Gio.Application.activateSig, activate app)
 
     val argv = Utf8CPtrArrayN.fromList (CommandLine.name () :: CommandLine.arguments ())
     val status = Gio.Application.run app argv

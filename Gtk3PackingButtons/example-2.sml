@@ -16,7 +16,7 @@ fun activate app () =
     val () = Container.add window grid
 
     val button = Button.newWithLabel "Button 1"
-    val _ = Signal.connect button Button.clickedSig printHello
+    val _ = Signal.connect button (Button.clickedSig, printHello)
 
     (* Place the first button in the grid cell (0, 0), and make it fill
      * just 1 cell horizontally and vertically (ie no spanning)
@@ -24,7 +24,7 @@ fun activate app () =
     val () = Grid.attach grid (button, 0, 0, 1, 1)
 
     val button = Button.newWithLabel "Button 2"
-    val _ = Signal.connect button Button.clickedSig printHello
+    val _ = Signal.connect button (Button.clickedSig, printHello)
 
     (* Place the second button in the grid cell (1, 0), and make it fill
      * just 1 cell horizontally and vertically (ie no spanning)
@@ -32,7 +32,7 @@ fun activate app () =
     val () = Grid.attach grid (button, 1, 0, 1, 1)
 
     val button = Button.newWithLabel "Quit"
-    val _ = Signal.connect button Button.clickedSig (fn () => Widget.destroy window)
+    val _ = Signal.connect button (Button.clickedSig, fn () => Widget.destroy window)
 
     (* Place the Quit button in the grid cell (0, 1), and make it
      * span 2 columns.
@@ -52,7 +52,7 @@ fun activate app () =
 fun main () =
   let
     val app = Gtk.Application.new (SOME "org.gtk.example", Gio.ApplicationFlags.FLAGS_NONE)
-    val id = Signal.connect app Gio.Application.activateSig (activate app)
+    val id = Signal.connect app (Gio.Application.activateSig, activate app)
 
     val argv = Utf8CPtrArrayN.fromList (CommandLine.name () :: CommandLine.arguments ())
     val status = Gio.Application.run app argv

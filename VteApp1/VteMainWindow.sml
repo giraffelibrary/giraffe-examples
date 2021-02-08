@@ -36,7 +36,7 @@ structure VteMainWindow =
           )
 
         fun onResponse _ = Widget.destroy dlg
-        val _ = Signal.connect dlg Dialog.responseSig onResponse
+        val _ = Signal.connect dlg (Dialog.responseSig, onResponse)
 
         val () = Window.setModal dlg true
         val () = Widget.show dlg
@@ -174,7 +174,7 @@ structure VteMainWindow =
           in
             ()
           end
-        val _ = Signal.connect dlg Dialog.responseSig onResponse
+        val _ = Signal.connect dlg (Dialog.responseSig, onResponse)
 
         val () = Window.setModal dlg true
         val () = Widget.show dlg
@@ -199,7 +199,7 @@ structure VteMainWindow =
         val () =
           case activateFun of
             SOME f => ignore (
-              Signal.connect action SimpleAction.activateSig (check f)
+              Signal.connect action (SimpleAction.activateSig, check f)
             )
           | NONE   => ()
         val () = SimpleAction.setEnabled action true
@@ -246,8 +246,8 @@ structure VteMainWindow =
         val mainWnd = ApplicationWindow.new app
 
         (* main window signals *)
-        val _ = Signal.connect mainWnd Widget.deleteEventSig deleteEvent
-        val _ = Signal.connect mainWnd Widget.destroySig (destroy app)
+        val _ = Signal.connect mainWnd (Widget.deleteEventSig, deleteEvent)
+        val _ = Signal.connect mainWnd (Widget.destroySig, destroy app)
 
         (* main window layout *)
         val () = Box.setHomogeneous hBox false
@@ -335,7 +335,7 @@ structure VteMainWindow =
             parseCheckColor "lightblue",
             GdkColorRecordCArrayN.fromList []
           )
-        val _ = Signal.connect vte VteTerminal.childExitedSig (childClose widgets)
+        val _ = Signal.connect vte (VteTerminal.childExitedSig, childClose widgets)
         local
           fun setVteScrollback () =
             VteTerminal.setScrollbackLines vte (SpinButton.getValueAsInt spinBtn)
@@ -344,7 +344,7 @@ structure VteMainWindow =
           val () = setVteScrollback ()
 
           (* ...and when changed.        *)
-          val _ = Signal.connect spinBtn SpinButton.valueChangedSig setVteScrollback
+          val _ = Signal.connect spinBtn (SpinButton.valueChangedSig, setVteScrollback)
         end
 
         (* show everything *)

@@ -21,16 +21,16 @@ fun main () =
 
     (* Connect signal handlers to the constructed widgets. *)
     val window = getObject Gtk.WindowClass.t builder "window"
-    val _ = Signal.connect window Gtk.Widget.destroySig Gtk.mainQuit
+    val _ = Signal.connect window (Gtk.Widget.destroySig, Gtk.mainQuit)
 
     val button = getObject Gtk.ButtonClass.t builder "button1"
-    val _ = Signal.connect button Gtk.Button.clickedSig printHello
+    val _ = Signal.connect button (Gtk.Button.clickedSig, printHello)
 
     val button = getObject Gtk.ButtonClass.t builder "button2"
-    val _ = Signal.connect button Gtk.Button.clickedSig printHello
+    val _ = Signal.connect button (Gtk.Button.clickedSig, printHello)
 
     val button = getObject Gtk.ButtonClass.t builder "quit"
-    val _ = Signal.connect button Gtk.Button.clickedSig Gtk.mainQuit
+    val _ = Signal.connect button (Gtk.Button.clickedSig, Gtk.mainQuit)
 
     val () = Gtk.main ()
   in

@@ -1,6 +1,6 @@
 # Giraffe Library application sample Makefile
 #
-# Copyright 2015-2020 Phil Clayton <phil.clayton@veonix.com>
+# Copyright 2015-2021 Phil Clayton <phil.clayton@veonix.com>
 #
 # This file is part of the Giraffe Library runtime.  For your rights to use
 # this file, see the file 'LICENCE.RUNTIME' distributed with Giraffe Library
@@ -151,7 +151,7 @@ $(TARGET_MLTON) : $(SRC_MLTON)
 	 -const 'GiraffeDebug.isEnabled $(MLTONDEBUG)' \
 	 -const 'Exn.keepHistory true' \
 	 -cc-opt "-ggdb -std=c99 -O2" \
-	 -link-opt "`pkg-config --libs $(PKG_NAMES)` -L$(GIRAFFE_MLTON_LIBDIR) $(GIRAFFE_MLTON_LIB_LDFLAGS)" \
+	 -link-opt "-L$(GIRAFFE_MLTON_LIBDIR) $(GIRAFFE_MLTON_LIB_LDFLAGS) `pkg-config --libs $(PKG_NAMES)`" \
 	 mlton.mlb
 
 
@@ -204,20 +204,19 @@ ifeq ($(KERNEL_NAME),Darwin)
 	 -Wl,-rpath,$(GIRAFFE_POLYML_LIBDIR) \
 	 -o $@ \
 	 $< \
-	 `PKG_CONFIG_PATH=$(POLYML_LIBDIR)/pkgconfig:$(PKG_CONFIG_PATH) pkg-config --libs polyml $(PKG_NAMES)` \
-	 -L$(GIRAFFE_POLYML_LIBDIR) $(GIRAFFE_POLYML_LIB_LDFLAGS)
+	 -L$(GIRAFFE_POLYML_LIBDIR) $(GIRAFFE_POLYML_LIB_LDFLAGS) \
+	 `PKG_CONFIG_PATH=$(POLYML_LIBDIR)/pkgconfig:$(PKG_CONFIG_PATH) pkg-config --libs polyml $(PKG_NAMES)`
 else
 	$(CC) \
 	 -g \
 	 -rdynamic \
 	 -Wl,--no-copy-dt-needed-entries \
-	 -Wl,--no-as-needed \
 	 -Wl,-rpath,$(POLYML_LIBDIR) \
 	 -Wl,-rpath,$(GIRAFFE_POLYML_LIBDIR) \
 	 -o $@ \
 	 $< \
-	 `PKG_CONFIG_PATH=$(POLYML_LIBDIR)/pkgconfig:$(PKG_CONFIG_PATH) pkg-config --libs polyml $(PKG_NAMES)` \
-	 -L$(GIRAFFE_POLYML_LIBDIR) $(GIRAFFE_POLYML_LIB_LDFLAGS)
+	 -L$(GIRAFFE_POLYML_LIBDIR) $(GIRAFFE_POLYML_LIB_LDFLAGS) \
+	 `PKG_CONFIG_PATH=$(POLYML_LIBDIR)/pkgconfig:$(PKG_CONFIG_PATH) pkg-config --libs polyml $(PKG_NAMES)`
 endif
 
 

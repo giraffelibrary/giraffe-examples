@@ -10,7 +10,7 @@
 <title>GTK 3 Packing Buttons with GtkBuilder Example</title>
 <p>
 The SML version of the C code for
-<link href="https://developer.gnome.org/gtk3/stable/ch01s03.html">Example 3 from the GTK 3 reference manual</link>.
+<link href="https://developer-old.gnome.org/gtk3/stable/ch01s03.html">Example 3 from the GTK 3 reference manual</link>.
 </p>
 <p>
 This example demonstrates downcasting of an object to a subclass using <code>GObject.ObjectClass.toDerived</code>.

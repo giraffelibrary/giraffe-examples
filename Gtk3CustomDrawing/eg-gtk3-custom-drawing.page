@@ -10,7 +10,7 @@
 <title>GTK 3 Custom Drawing Example</title>
 <p>
 The SML version of the C code for
-<link href="https://developer.gnome.org/gtk3/3.24/ch01s05.html">Example 4 from the GTK 3 reference manual</link>.
+<link href="https://developer-old.gnome.org/gtk3/3.24/ch01s05.html">Example 4 from the GTK 3 reference manual</link>.
 </p>
 
 <section>

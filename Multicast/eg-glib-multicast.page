@@ -9,7 +9,7 @@
 <title>UDP Multicast Example</title>
 <p>
 This example demonstrates use of
-the GIO <link href="https://developer.gnome.org/gio/stable/GSocket.html">low-level socket</link> API
+the GIO <link href="https://developer-old.gnome.org/gio/stable/GSocket.html">low-level socket</link> API
 to send and receive a string using UDP/IP via a multicast group.
 </p>
 <p>

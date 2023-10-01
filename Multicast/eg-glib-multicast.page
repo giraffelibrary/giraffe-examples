@@ -57,12 +57,12 @@ See <link xref="eg-using-make"/> for build instructions.
 <title>File listings</title>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>multicast.sml</file></title>
-  <code>
+  <code type="sml">
 <include parse="text" href="multicast.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>mlton-main.sml</file></title>
-  <code>
+  <code type="sml">
 <include parse="text" href="mlton-main.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
@@ -72,17 +72,17 @@ See <link xref="eg-using-make"/> for build instructions.
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>polyml-libs.sml</file></title>
-  <code>
+  <code type="sml">
 <include parse="text" href="polyml-libs.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>polyml-app.sml</file></title>
-  <code>
+  <code type="sml">
 <include parse="text" href="polyml-app.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>app.mk</file></title>
-  <code>
+  <code type="makefile">
 <include parse="text" href="app.mk" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 </section>

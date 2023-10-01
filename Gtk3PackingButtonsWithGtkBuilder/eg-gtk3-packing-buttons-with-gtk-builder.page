@@ -13,11 +13,11 @@ The SML version of the C code for
 <link href="https://developer-old.gnome.org/gtk3/stable/ch01s03.html">Example 3 from the GTK 3 reference manual</link>.
 </p>
 <p>
-This example demonstrates downcasting of an object to a subclass using <code>GObject.ObjectClass.toDerived</code>.
+This example demonstrates downcasting of an object to a subclass using <code type="sml">GObject.ObjectClass.toDerived</code>.
 This function checks at run-time whether the downcast object is an instance of the subclass and,
 if not, emits a critical warning.
 Use of downcasting is unavoidable when looking up an object created by GtkBuilder because the return value of
-<code>Gtk.Builder.getObject</code> is known to be only an instance of <code>GObject.Object.t</code>.
+<code type="sml">Gtk.Builder.getObject</code> is known to be only an instance of <code type="sml">GObject.Object.t</code>.
 </p>
 
 <section>
@@ -42,17 +42,17 @@ See <link xref="eg-using-make"/> for build instructions.
 <title>File listings</title>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>example-3.sml</file></title>
-  <code>
+  <code type="sml">
 <include parse="text" href="example-3.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>builder.ui</file></title>
-  <code>
+  <code type="xml">
 <include parse="text" href="builder.ui" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>mlton-main.sml</file></title>
-  <code>
+  <code type="sml">
 <include parse="text" href="mlton-main.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
@@ -62,17 +62,17 @@ See <link xref="eg-using-make"/> for build instructions.
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>polyml-libs.sml</file></title>
-  <code>
+  <code type="sml">
 <include parse="text" href="polyml-libs.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>polyml-app.sml</file></title>
-  <code>
+  <code type="sml">
 <include parse="text" href="polyml-app.sml" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 <listing xmlns:ui="http://projectmallard.org/ui/1.0/" ui:expanded="false">
   <title><file>app.mk</file></title>
-  <code>
+  <code type="makefile">
 <include parse="text" href="app.mk" xmlns="http://www.w3.org/2001/XInclude"/></code>
 </listing>
 </section>

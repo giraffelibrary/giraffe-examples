@@ -1,4 +1,4 @@
-fun printHello () = print "Hello World\n"
+fun printHello _ () = print "Hello World\n"
 
 (* Wrap Gtk.Builder.getObject to check for `NONE` and to downcast the result. *)
 fun getObject subclass builder name =
@@ -21,7 +21,7 @@ fun main () =
 
     (* Connect signal handlers to the constructed widgets. *)
     val window = getObject Gtk.WindowClass.t builder "window"
-    val _ = Signal.connect window (Gtk.Widget.destroySig, Gtk.mainQuit)
+    val _ = Signal.connect window (Gtk.Widget.destroySig, fn _ => Gtk.mainQuit)
 
     val button = getObject Gtk.ButtonClass.t builder "button1"
     val _ = Signal.connect button (Gtk.Button.clickedSig, printHello)
@@ -30,7 +30,7 @@ fun main () =
     val _ = Signal.connect button (Gtk.Button.clickedSig, printHello)
 
     val button = getObject Gtk.ButtonClass.t builder "quit"
-    val _ = Signal.connect button (Gtk.Button.clickedSig, Gtk.mainQuit)
+    val _ = Signal.connect button (Gtk.Button.clickedSig, fn _ => Gtk.mainQuit)
 
     val () = Gtk.main ()
   in

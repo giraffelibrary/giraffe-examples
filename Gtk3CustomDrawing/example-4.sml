@@ -43,7 +43,7 @@ fun configureEventCb widget _ =
  * signal receives a ready-to-be-used cairo_t that is already
  * clipped to only draw the exposed areas of the widget
  *)
-fun drawCb cr =
+fun drawCb _ cr =
   case !surface of
     NONE         => false
   | SOME surface =>
@@ -128,7 +128,7 @@ fun motionNotifyEventCb widget event =
         true
       end
 
-fun closeWindow () =
+fun closeWindow _ () =
   case !surface of
     SOME _ => surface := NONE
   | NONE   => ()
@@ -156,14 +156,11 @@ fun activate app () =
 
     (* Signals used to handle the backing surface *)
     val _ = Signal.connect drawingArea (Widget.drawSig, drawCb)
-    val _ = Signal.connect drawingArea (Widget.configureEventSig,
-                                                   configureEventCb drawingArea)
+    val _ = Signal.connect drawingArea (Widget.configureEventSig, configureEventCb)
 
     (* Event signals *)
-    val _ = Signal.connect drawingArea (Widget.motionNotifyEventSig,
-                                                motionNotifyEventCb drawingArea)
-    val _ = Signal.connect drawingArea (Widget.buttonPressEventSig,
-                                                 buttonPressEventCb drawingArea)
+    val _ = Signal.connect drawingArea (Widget.motionNotifyEventSig, motionNotifyEventCb)
+    val _ = Signal.connect drawingArea (Widget.buttonPressEventSig, buttonPressEventCb)
 
     (* Ask to receive events the drawing area doesn't normally
      * subscribe to. In particular, we need to ask for the
@@ -185,12 +182,10 @@ fun activate app () =
 fun main () =
   let
     val app = Gtk.Application.new (SOME "org.gtk.example", Gio.ApplicationFlags.FLAGS_NONE)
-    val id = Signal.connect app (Gio.Application.activateSig, activate app)
+    val _ = Signal.connect app (Gio.Application.activateSig, activate)
 
     val argv = Utf8CPtrArrayN.fromList (CommandLine.name () :: CommandLine.arguments ())
     val status = Gio.Application.run app argv
-
-    val () = Signal.handlerDisconnect app id
   in
     Giraffe.exit status
   end

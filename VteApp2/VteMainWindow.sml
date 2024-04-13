@@ -215,7 +215,7 @@ structure VteMainWindow =
 
     fun deleteEvent _ _ = false
 
-    fun destroy app () = (
+    fun destroy app _ = (
       case !theProc of
         SOME _ => kill ()
       | _      => ();
@@ -247,7 +247,7 @@ structure VteMainWindow =
 
         (* main window signals *)
         val _ = Signal.connect mainWnd (Widget.deleteEventSig, deleteEvent)
-        val _ = Signal.connect mainWnd (Widget.destroySig, fn _ => destroy app)
+        val _ = Signal.connect mainWnd (Widget.destroySig, destroy app)
 
         (* main window layout *)
         val () = Box.setHomogeneous hBox false
@@ -337,11 +337,11 @@ structure VteMainWindow =
           )
         val _ = Signal.connect vte (VteTerminal.childExitedSig, fn _ => childClose widgets)
         local
-          fun setVteScrollback spinBtn () =
+          fun setVteScrollback spinBtn =
             VteTerminal.setScrollbackLines vte (SpinButton.getValueAsInt spinBtn)
         in
           (* set scrollback lines now... *)
-          val () = setVteScrollback spinBtn ()
+          val () = setVteScrollback spinBtn
 
           (* ...and when changed.        *)
           val _ = Signal.connect spinBtn (SpinButton.valueChangedSig, setVteScrollback)

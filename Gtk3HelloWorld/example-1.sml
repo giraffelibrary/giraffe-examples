@@ -1,6 +1,6 @@
-fun printHello _ () = print "Hello World\n"
+fun printHello _ = print "Hello World\n"
 
-fun activate app () =
+fun activate app =
   let
     open Gtk
 
@@ -13,7 +13,7 @@ fun activate app () =
 
     val button = Button.newWithLabel "Hello World"
     val _ = Signal.connect button (Button.clickedSig, printHello)
-    val _ = Signal.connect button (Button.clickedSig, fn _ => fn () => Widget.destroy window)
+    val _ = Signal.connect button (Button.clickedSig, fn _ => Widget.destroy window)
     val () = Container.add buttonBox button
 
     val () = Widget.showAll window

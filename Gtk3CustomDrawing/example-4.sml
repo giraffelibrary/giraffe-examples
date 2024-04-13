@@ -128,12 +128,12 @@ fun motionNotifyEventCb widget event =
         true
       end
 
-fun closeWindow _ () =
+fun closeWindow _ =
   case !surface of
     SOME _ => surface := NONE
   | NONE   => ()
 
-fun activate app () =
+fun activate app =
   let
     open Gtk
 

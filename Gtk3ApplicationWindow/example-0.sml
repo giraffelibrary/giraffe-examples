@@ -1,4 +1,4 @@
-fun activate app () =
+fun activate app =
   let
     open Gtk
 

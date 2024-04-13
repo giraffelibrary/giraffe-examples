@@ -1,6 +1,6 @@
-fun printHello _ () = print "Hello World\n"
+fun printHello _ = print "Hello World\n"
 
-fun activate app () =
+fun activate app =
   let
     open Gtk
 
@@ -32,7 +32,7 @@ fun activate app () =
     val () = Grid.attach grid (button, 1, 0, 1, 1)
 
     val button = Button.newWithLabel "Quit"
-    val _ = Signal.connect button (Button.clickedSig, fn _ => fn () => Widget.destroy window)
+    val _ = Signal.connect button (Button.clickedSig, fn _ => Widget.destroy window)
 
     (* Place the Quit button in the grid cell (0, 1), and make it
      * span 2 columns.

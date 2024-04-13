@@ -1,4 +1,4 @@
-fun activate app () =
+fun activate app =
   let
     val window = VteMainWindow.new app
     val () = Gtk.Window.present window

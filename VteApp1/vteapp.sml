@@ -12,8 +12,12 @@ fun main () =
     val app = Gtk.Application.new (SOME appId, Gio.ApplicationFlags.flags [])
     val _ = Signal.connect app (Gio.Application.activateSig, activate)
 
+    val () = Giraffe.Finalize.enableAsyncInContext NONE NONE
+
     val argv = Utf8CPtrArrayN.fromList (CommandLine.name () :: CommandLine.arguments ())
     val status = Gio.Application.run app argv
+
+    val () = Giraffe.Finalize.disableAsyncInContext NONE
   in
     Giraffe.exit status
   end

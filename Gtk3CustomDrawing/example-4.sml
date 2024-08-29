@@ -97,6 +97,7 @@ fun buttonPressEventCb widget (event : Gdk.EventButtonRecord.t) =
             (
               clearSurface ()
             ; Gtk.Widget.queueDraw widget
+            ; GC.full ()
             )
           else
             ()
@@ -184,8 +185,12 @@ fun main () =
     val app = Gtk.Application.new (SOME "org.gtk.example", Gio.ApplicationFlags.FLAGS_NONE)
     val _ = Signal.connect app (Gio.Application.activateSig, activate)
 
+    val () = Giraffe.Finalize.enableAsyncInContext NONE NONE
+
     val argv = Utf8CPtrArrayN.fromList (CommandLine.name () :: CommandLine.arguments ())
     val status = Gio.Application.run app argv
+
+    val () = Giraffe.Finalize.disableAsyncInContext NONE
   in
     Giraffe.exit status
   end

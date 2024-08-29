@@ -40,6 +40,7 @@ endif
 #   LIB_NAMES       - list of the libraries that the application references
 
 LIB_NAMES := \
+	glib-2.0 \
 	gobject-2.0 \
 	gio-2.0 \
 	cairo-1.0 \

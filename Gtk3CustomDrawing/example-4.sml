@@ -97,7 +97,7 @@ fun buttonPressEventCb widget (event : Gdk.EventButtonRecord.t) =
             (
               clearSurface ()
             ; Gtk.Widget.queueDraw widget
-            ; GC.full ()
+            ; Giraffe.GC.full ()
             )
           else
             ()

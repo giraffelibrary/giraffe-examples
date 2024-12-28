@@ -24,7 +24,7 @@ This example demonstrates:
 </item>
 </list>
 <p>
-<code type="sml">GC.full ()</code> is used while reading to ensure that the read buffers,
+<code type="sml">Giraffe.GC.full ()</code> is used while reading to ensure that the read buffers,
 allocated on the C heap, are not kept longer than necessary.  Although a compiler would
 eventually trigger GC, this avoids unnecessarily allocating memory which may trigger
 performance issues relating to virtual memory, particularly with large files.

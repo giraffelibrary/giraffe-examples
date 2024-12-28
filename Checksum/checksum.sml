@@ -46,7 +46,7 @@ fun main () : unit =
               let
                 val data = GUInt8CArrayN.subslice (buffer, n)
                 val () = Checksum.update checksum data
-                val () = GC.full ()  (* ensure memory for `buffer` is released *)
+                val () = Giraffe.GC.full ()  (* ensure memory for `buffer` is released *)
               in
                 updateChecksum ()
               end

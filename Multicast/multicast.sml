@@ -60,7 +60,7 @@ fun main () : unit =
             val _ =
               Socket.sendTo socket (SOME multicastInetSockAddr, buffer, NONE)
                 handle GLib.Error _ => Giraffe.error 1 ["failed to send message\n"]
-            val () = GC.full ()
+            val () = Giraffe.GC.full ()
           in
             if n <> 0
             then (Posix.Process.sleep delay; send (n + 1))
@@ -110,7 +110,7 @@ fun main () : unit =
               | _ => Giraffe.error 1 ["message received from non-inet socket address\n"]
             val msg = CharVector.tabulate (n, Byte.byteToChar o GUInt8CArrayN.get buffer)
             val () = log fromInetSockAddr msg
-            val () = GC.full ()
+            val () = Giraffe.GC.full ()
           in
             case Int.fromString msg of
               SOME 0 => ()

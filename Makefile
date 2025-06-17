@@ -150,7 +150,7 @@ $(TARGET_MLTON) : $(SRC_MLTON)
 	 -output $(TARGET_MLTON) \
 	 -const 'GiraffeDebug.isEnabled $(MLTONDEBUG)' \
 	 -const 'Exn.keepHistory true' \
-	 -cc-opt "-ggdb -std=c99 -O2" \
+	 -cc-opt "-ggdb -O2" \
 	 -link-opt "-L$(GIRAFFE_MLTON_LIBDIR) $(GIRAFFE_MLTON_LIB_LDFLAGS) `pkg-config --libs $(PKG_NAMES)`" \
 	 mlton.mlb
 

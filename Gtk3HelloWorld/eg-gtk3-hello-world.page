@@ -10,7 +10,7 @@
 <title>GTK 3 Hello World Example</title>
 <p>
 The SML version of the C code for
-<link href="https://developer-old.gnome.org/gtk3/stable/gtk-getting-started.html#id-1.2.3.5">Example 1 from the GTK 3 reference manual</link>.
+<link href="https://docs.gtk.org/gtk3/getting_started.html#basics">Example 1 from the GTK 3 reference manual</link>.
 </p>
 
 <section>

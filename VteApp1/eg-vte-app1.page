@@ -9,7 +9,7 @@
 <title>VTE 2.90 Widget Example</title>
 <p>
 This example demonstrates use of
-the <link href="https://developer-old.gnome.org/vte/0.36/">VTE 2.90 widget</link> API
+the VTE 2.90 widget API
 in an application.
 </p>
 <note>
@@ -23,16 +23,16 @@ See <link xref="eg-vte-app2"/> for an example using API version 2.91.
 Also, this example demonstrates use of other GTK widgets:
 </p>
 <list style="compact">
-<item><p><link href="https://developer-old.gnome.org/gtk3/stable/GtkMessageDialog.html">message dialog</link></p></item>
-<item><p><link href="https://developer-old.gnome.org/gtk3/stable/GtkFontChooserDialog.html">font chooser dialog</link></p></item>
+<item><p><link href="https://docs.gtk.org/gtk3/class.MessageDialog.html">message dialog</link></p></item>
+<item><p><link href="https://docs.gtk.org/gtk3/class.FontChooserDialog.html">font chooser dialog</link></p></item>
 <item>
   <p>
-    <link href="https://developer-old.gnome.org/gtk3/stable/GtkButton.html">button</link>,
-    with a <link href="https://developer-old.gnome.org/gio/stable/GSimpleAction.html">simple action</link>
-    that is added to an <link href="https://developer-old.gnome.org/gio/stable/GActionMap.html">action map</link>
+    <link href="https://docs.gtk.org/gtk3/class.Button.html">button</link>,
+    with a <link href="https://docs.gtk.org/gio/class.SimpleAction.html">simple action</link>
+    that is added to an <link href="https://docs.gtk.org/gio/iface.ActionMap.html">action map</link>
   </p>
 </item>
-<item><p><link href="https://developer-old.gnome.org/gtk3/stable/GtkSpinButton.html">spin button</link></p></item>
+<item><p><link href="https://docs.gtk.org/gtk3/class.SpinButton.html">spin button</link></p></item>
 </list>
 
 <section>

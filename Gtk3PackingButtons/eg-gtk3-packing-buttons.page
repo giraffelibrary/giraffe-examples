@@ -10,7 +10,7 @@
 <title>GTK 3 Packing Buttons Example</title>
 <p>
 The SML version of the C code for
-<link href="https://developer-old.gnome.org/gtk3/stable/ch01s02.html">Example 2 from the GTK 3 reference manual</link>.
+<link href="https://docs.gtk.org/gtk3/getting_started.html#packing">Example 2 from the GTK 3 reference manual</link>.
 </p>
 
 <section>

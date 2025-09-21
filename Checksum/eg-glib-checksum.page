@@ -13,13 +13,13 @@ This example demonstrates:
 <list style="compact">
 <item>
   <p>
-    reading a file using the GIO <link href="https://developer-old.gnome.org/gio/stable/GFile.html">file</link>
-    and <link href="https://developer-old.gnome.org/gio/stable/GInputStream.html">input stream</link> APIs;
+    reading a file using the GIO <link href="https://docs.gtk.org/gio/iface.File.html">file</link>
+    and <link href="https://docs.gtk.org/gio/class.InputStream.html">input stream</link> APIs;
   </p>
 </item>
 <item>
   <p>
-    computing a checksum using the GLib <link href="https://developer-old.gnome.org/glib/stable/glib-Data-Checksums.html">data checksum</link> API.
+    computing a checksum using the GLib <link href="https://docs.gtk.org/glib/struct.Checksum.html">data checksum</link> API.
   </p>
 </item>
 </list>
